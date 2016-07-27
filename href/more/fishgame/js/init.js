@@ -1,9 +1,12 @@
+/**
+ * Created by ijiajia on 2016/7/19.
+ */
 window.onload = function () {
     var oC=document.querySelector('#c1');
 
     var gd=oC.getContext('2d');
     var out=50;
-    var frequency=0.1;
+    var frequency=0.2;
     // 加载资源
     loadImage(resource, function(){
         // 存炮弹
@@ -146,6 +149,9 @@ window.onload = function () {
             bullet.rotate=c.rotate;
             arrBullet.push(bullet);
 
+            var oAudio=new Audio();
+            oAudio.src='snd/cannon.mp3';
+            oAudio.play();
         };
     });
 };
