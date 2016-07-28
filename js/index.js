@@ -14,15 +14,16 @@ window.onload = function(){
 	function getSize(){
 		for(var i = 0; i < aModule.length; i++){
 			aModule[i].style.height = document.documentElement.clientHeight + 'px';
+			oBg.style.height = aModule[0].offsetHeight*4 + 'px';
 		}
+		oBg.style.top = -document.documentElement.clientHeight*iNow + 'px';
 	}
 	getSize();
 	window.onresize = function(){
 		getSize();
 	};
 
-	// 滚轮切屏
-	addWheel(oBg, function(bDown){
+	function wheel(bDown){
 		if(bDown){
 			if(bFlag){
 				bFlag = false;
@@ -46,7 +47,10 @@ window.onload = function(){
 				}});
 			}
         }
-	});
+	}
+
+	// 滚轮切屏
+	addWheel(oBg, wheel);
 
 
 	// 导航
