@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../css/base.css">
 	<link rel="stylesheet" href="../plugins/h5page/H5FullscreenPage.css">
 	<link rel="stylesheet" href="../plugins/h5page/page-animation.css">
-	<script src="../plugins/zepto.min.js"></script>
+	<script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
 	<script src="../js/common.js"></script>
 	<script src="../plugins/h5page/H5FullscreenPage.js"></script>
 <style>
@@ -48,11 +48,22 @@
     	});
 
 		H5FullscreenPage.init(
-			{'type':2,'pageShow' : function(dom){
-        
-	    		},'pageHide' : function(dom){
-	        		//console.log(dom);
-    			}
+			{
+				'type': 2,
+				'pageShow': function(dom){},
+				'pageHide' : function(dom){},
+				'useShakeDevice' : {
+			        'speed' : 30,
+			        'callback' : function(page){}
+			    },
+			    'useParallax' : true,
+			    'useArrow' : true,
+			    'useAnimation' : true,
+			    'useMusic' : {
+			        'autoPlay' : true,
+			        'loopPlay' : true,
+			        'src' : '../audio/river.mp3'
+			    }
     		}
     	);
 	});
