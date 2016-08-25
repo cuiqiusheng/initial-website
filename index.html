@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Document</title>
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<link rel="bookmark" href="favicon.ico"/>
+	<link rel="stylesheet" href="mobile/css/base.css">
+	<script src="mobile/plugins/zepto.min.js"></script>
+	<script src="mobile/js/common.js"></script>
+<style>
+	section{
+		width: 100%;
+		background: #9cf;
+		overflow: hidden;
+	}
+	.main-list{
+		width: 14rem;
+		margin: 0.1rem auto;
+	}
+	.main-list li{
+		width: 5rem;
+		height: 5rem;
+		line-height: 5rem;
+		text-align: center;
+		margin: 1rem;
+		background: #ccf;
+		border-radius: 50%;
+	}
+	.main-list a{
+		display: block;
+		color: #fff;
+	}
+</style>
+<script>
+    ;(function(win, doc){
+        function change(){
+            doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+        }
+        change();
+        win.addEventListener('resize', change, false);
+    })(window, document);
+    $(function(){
+    	getSize($("section"));
+    	$(window).on("resize", function(){
+    		getSize($("section"));
+    	});
+    });
+</script>
+</head>
+<body>
+	<section>
+		<ul class="main-list clearfix">
+			<li class="fl"><a href="pc/index.html">PC</a></li>
+			<li class="fl"><a href="mobile/views/index.html">移动端</a></li>
+		</ul>
+	</section>
+</body>
+</html>
